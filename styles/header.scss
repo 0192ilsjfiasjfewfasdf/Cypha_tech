@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .top-header {
+    padding: 50px 50px 0px;
+  }
+  .header__container {
+    float: left;
+    position: relative;
+    z-index: 999;
+
+    img {
+      max-width: 100%;
+      width: 140px;
+    }
+  }
+}

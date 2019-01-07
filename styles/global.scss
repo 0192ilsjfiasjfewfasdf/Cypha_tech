@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+@font-face {
+  font-family: "HVDComicSerifPro";
+  src: url("../assets/fonts/HVDComicSerifPro.eot") format("embedded-opentype"),
+    url("../assets/fonts/HVDComicSerifPro.otf") format("opentype"),
+    url("../assets/fonts/HVDComicSerifPro.woff") format("woff"),
+    url("../assets/fonts/HVDComicSerifPro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SketchBlock-Bold";
+  src: url("../assets/fonts/SketchBlock-Bold.eot") format("embedded-opentype"),
+    url("../assets/fonts/SketchBlock-Bold.woff") format("woff"),
+    url("../assets/fonts/SketchBlock-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: $body;
+  font-size: 15px;
+  line-height: 28px;
+}
+.section__container:after,
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.section__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1230px;
+  padding: 0 15px;
+}
+img {
+  max-width: 100%;
+}
