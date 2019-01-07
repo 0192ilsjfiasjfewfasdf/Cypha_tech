@@ -217,5 +217,38 @@
         </div>
       </div>
     </div>
+    <!--jQuery-->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.scrollify.js"></script>
+    <script src="slick.min.js"></script>
+    <!--scrollify-->
+    <script>
+      $(function() {
+        $.scrollify({
+          section: ".section__wrap .section",
+          interstitialSection: "",
+          easing: "easeOutExpo",
+          scrollSpeed: 1100,
+          overflowScroll: true,
+          updateHash: false //I don't have to change the url...
+        });
+      });
+    </script>
+    <!--slider container-->
+    <script>
+      $(document).ready(function() {
+        $(".game-play__slider").slick({
+          nextArrow:
+            '<span class="left-arrow"><img src="assets/arrow-left.png"></span>',
+          prevArrow:
+            '<span class="right-arrow"><img src="assets/arrow-right.png"></span>',
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        });
+      });
+    </script>
   </body>
 </html>
