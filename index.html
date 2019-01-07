@@ -15,25 +15,40 @@
   <body>
     <!--Logo & hamburger menu header-->
     <header class="header">
-      <div class="top-header">
-        <div class="header__container">
+      <div class="top-header clearfix">
+        <div class="top-header__logo">
           <a href="index.html"><img src="assets/kazoops-logo-tm.png"/></a>
+        </div>
+        <div class="top-header__nav">
+          <a href="#" class="nav-btn"><span></span></a>
         </div>
       </div>
 
       <!--Overlay menu-->
       <div class="overlay-menu">
         <div class="overlay-menu__main">
-          <ul>
-            <li>Home</li>
-            <li>Features</li>
-            <li>Game Play</li>
-            <li>About Us</li>
-          </ul>
+          <div class="overlay-menu__inner">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html">Features</a></li>
+              <li><a href="index.html">Game Play</a></li>
+              <li><a href="index.html">About Us</a></li>
+            </ul>
+          </div>
+          <!--Overlay downloadble logo-->
+          <div class="download-btn overlay-menu__download">
+            <a
+              href="https://play.google.com/store/tv/show/Kazoops_The_Incredible_Kazoops?id=x44W6KcNDIhHJuy404XL6g&hl=en"
+              ><img src="assets/play-store-button.png" alt="Google download"
+            /></a>
+            <a href="https://itunes.apple.com/au/artist/kazoops/1165386584"
+              ><img src="assets/app-store-button.png" alt="Apple download"
+            /></a>
+          </div>
         </div>
 
         <!--Overlay social icon-->
-        <div class="menu__social">
+        <div class="menu__social no-sticky">
           <a href="https://www.facebook.com/kazoops/">
             <i class="fab fa-facebook-f"></i
           ></a>
@@ -44,16 +59,7 @@
             <i class="fab fa-instagram"></i
           ></a>
         </div>
-        <!--Overlay downloadble logo-->
-        <div class="overlay-menu__download">
-          <a
-            href="https://play.google.com/store/tv/show/Kazoops_The_Incredible_Kazoops?id=x44W6KcNDIhHJuy404XL6g&hl=en"
-            ><img src="assets/play-store-button.png" alt="Google download"
-          /></a>
-          <a href="https://itunes.apple.com/au/artist/kazoops/1165386584"
-            ><img src="assets/app-store-button.png" alt="Apple download"
-          /></a>
-        </div>
+
         <!--Overlay footer-->
         <div class="overlay-menu__footer">
           <a href="http://cyphainteractive.com.au">Made by Cypha</a>
@@ -109,7 +115,7 @@
           <div class="inner__section">
             <div class="inner__section-left">
               <h2>Features</h2>
-              <ul>
+              <ul class="list">
                 <li>
                   Create your own adventures in this game by building your own
                   scene using backgrounds, characters, music and props from your
@@ -146,6 +152,7 @@
                 <img src="assets/Gameplay-screenshot.png" />
                 <img src="assets/Gameplay-screenshot.png" />
               </div>
+              <div class="game-play__slider-count"></div>
             </div>
           </div>
         </div>
@@ -155,7 +162,7 @@
           <div class="inner__section">
             <div class="inner__section-left">
               <h3>About Us</h3>
-              <ul>
+              <ul class="list">
                 <li>
                   Create your own adventures in this game by building your own
                   scene using backgrounds, characters, music and props from your
@@ -189,8 +196,8 @@
 
       <!--Footer-->
       <div class="section footer">
-        <div class="section__container">
-          <div class="inner__section">
+        <div class="inner__footer">
+          <div class="section__container">
             <img src="assets/kazoops-logo-tm.png" />
             <div class="download-btn">
               <a
@@ -202,7 +209,7 @@
               /></a>
             </div>
             <div class="back-to-top__container">
-              <a href="index.html">
+              <a href="index.html" class="back-to-top">
                 <img src="assets/arrow-top.png" />
                 <h5>Back to top</h5>
               </a>
@@ -223,15 +230,23 @@
     <script src="slick.min.js"></script>
     <!--scrollify-->
     <script>
-      $(function() {
-        $.scrollify({
-          section: ".section__wrap .section",
-          interstitialSection: "",
-          easing: "easeOutExpo",
-          scrollSpeed: 1100,
-          overflowScroll: true,
-          updateHash: false //I don't have to change the url...
-        });
+      $(document).ready(function() {
+        if ($(".section__wrap").length > 0 && $(window).width() > 767) {
+          $(function() {
+            $.scrollify({
+              section: ".section__wrap .section",
+              easing: "easeOutExpo",
+              updateHash: false
+            });
+          });
+        }
+        if ($(".nav-btn").length > 0) {
+          $(".nav-btn").click(function() {
+            $(this).toggleClass("open");
+            $(".overlay-menu").fadeToggle();
+            $("body").toggleClass("open-overlay-menu");
+          });
+        }
       });
     </script>
     <!--slider container-->

@@ -1,0 +1,143 @@
+.section__wrap {
+  position: relative;
+  min-height: 100%;
+  .section {
+    position: relative;
+
+    h1 {
+      color: $ruby;
+      margin-bottom: 25px;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    .inner__section {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: space-between;
+      padding: 100px 0;
+    }
+    .inner__section-left {
+      width: 48%;
+      -webkit-order: 1;
+      order: 1;
+      max-width: 500px;
+    }
+    .inner__section-right {
+      width: 50%;
+      -webkit-order: 2;
+      order: 2;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+    &.sec1 {
+      .inner__section-left {
+        text-align: center;
+        padding: 50px 0 100px;
+      }
+      .inner__section-right {
+        &:after {
+          background-image: url("../assets/Underwater-tile.jpg");
+          background-size: cover;
+        }
+      }
+    }
+    &.sec2 {
+      .inner__section-right:after {
+        background-image: url("../assets/KAZ_2D_EIW_SFW_Textures-Grass.jpg");
+        background-size: cover;
+      }
+    }
+    &.sec3 {
+      .inner__section {
+        justify-content: flex-start;
+      }
+      .inner__section-left {
+        width: 47%;
+        max-width: none;
+        h2 {
+          margin-bottom: 0;
+        }
+      }
+      .inner__section-right {
+        width: 45%;
+        &:after {
+          background-image: url("../assets/Dino-road-texture.jpg");
+          background-size: cover;
+        }
+      }
+    }
+    &.sec4 {
+      .inner__section-right:after {
+        background-image: url("../assets/tropical-sand.jpg");
+        background-size: cover;
+      }
+    }
+    h1 {
+      font-size: 95px;
+      line-height: 1.2;
+      font-family: "SketchBlock-Bold";
+    }
+    h2 {
+      font-size: 40px;
+      line-height: 1.2;
+      font-family: "HVDComicSerifPro";
+      color: $blue;
+    }
+    .download-btn {
+      margin-top: 80px;
+
+      a {
+        display: inline-block;
+        margin: 0 25px;
+
+        img {
+          max-width: 166px;
+        }
+      }
+    }
+  }
+}
+
+.list {
+  li {
+    margin-bottom: 10px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 3px;
+      width: 3px;
+      border-radius: 10px;
+      background-color: $body;
+      margin-right: 5px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+.about__logos {
+  margin-top: 80px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    margin: 5px 35px 5px 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

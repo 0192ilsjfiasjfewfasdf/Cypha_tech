@@ -24,6 +24,10 @@ body {
   color: $body;
   font-size: 15px;
   line-height: 28px;
+
+  &.open-overlay-menu {
+    overflow: hidden;
+  }
 }
 .section__container:after,
 .clearfix:after {
